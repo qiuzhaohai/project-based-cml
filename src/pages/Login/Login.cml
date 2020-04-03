@@ -1,0 +1,109 @@
+<template>
+<page class="login" title="登录">
+  <view class="login-header">
+    <image class="user-avatar" src="{{userAvatarImgSrc}}"></image>
+    <view class="user-name">
+      <text class="user-name-text">{{userName}}</text>
+    </view>
+  </view>
+  <view class="login-container">
+    <view class="user-account">
+      <text class="account-text">工号</text>
+      <q-input class="account-input" inputOptions="{{accountInputOptions}}" c-bind:input="accountOnInput"></q-input>
+    </view>
+    <view class="line"></view>
+    <view class="user-password">
+      <text class="password-text">密码</text>
+      <q-input class="password-input" inputOptions="{{passwordInputOptions}}" c-bind:input="passwordOnInput"></q-input>
+    </view>
+    <view class="login-button" c-bind:click="loginOnClick"><text class="login-button-text">登录</text></view>
+  </view>
+  <view class="login-footer">
+    <text class="copy-right">Copyright © 2020 QiuZH's</text>
+  </view>
+</page>
+</template>
+
+<script>
+import cml from 'chameleon-api';
+
+class Login {
+
+  data = {
+    userAvatarImgSrc: require("../../assets/images/common/user_avatar.png?__inline"),
+    userName: 'QiuZHs',
+    accountInputOptions: {
+      type: 'number',
+      maxlength: 10,
+      placeholder: '请输入工号',
+      cstyle: 'border:none;text-align:center;'
+    },
+    userInfo: {
+      accountId: '',
+      password: ''
+    },
+    passwordInputOptions: {
+      type: 'password',
+      maxlength: 16,
+      placeholder: '请输入密码',
+      cstyle: 'border:none;text-align:center;'
+    }
+  }
+
+  computed = {}
+
+  watch = {}
+
+  methods = {
+    loginOnClick() {
+      cml.redirectTo({
+        path: '/pages/User/User'
+      })
+    },
+    accountOnInput(e) {
+      this.userInfo.accountId = e.detail;
+    },
+    passwordOnInput(e) {
+      this.userInfo.password = e.detail;
+    }
+  }
+
+  beforeCreate(query) {}
+
+  created(query) {
+  }
+
+  beforeMount(query) {}
+
+  onShow() {}
+
+  mounted() {}
+
+  onHide() {}
+
+  beforeDestroy() {}
+
+  destroyed() {}
+}
+
+export default new Login();
+</script>
+
+<style lang="less" scoped>
+@import './Login.less';
+</style>
+
+<script cml-type="json">
+{
+		"base": {
+				"usingComponents": {
+            "q-input": "/components/Input/Input"
+				}
+		},
+		"wx": {
+				"navigationBarTitleText": "index",
+				"backgroundTextStyle": "dark",
+				"backgroundColor": "#E2E2E2"
+		}
+}
+</script>

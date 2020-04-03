@@ -1,0 +1,30 @@
+@import "../../assets/theme/DefaultTheme.less";
+
+.tablecell {
+    flex-direction: row;
+    margin: auto @boundarySpacing;
+
+    .cell-title {
+        width: 200cpx;
+        height: @cellHeightNormal;
+
+        .cell-title-text {
+            text-align: left;
+            margin: auto 0;
+            color: @contentColor;
+            font-size: @fontSizeContent;
+        }
+    }
+
+    .cell-content {
+        width: 490cpx;
+        height: @cellHeightNormal;
+
+        .cell-content-text {
+            text-align: right;
+            margin: auto 0;
+            color: @contentColor;
+            font-size: 28cpx;
+        }
+    }
+}

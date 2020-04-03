@@ -1,0 +1,30 @@
+{
+  "mode": "hash",
+  "domain": "./",
+  "routes":[
+    {
+      "url": "/",
+      "path": "/pages/Login/Login",
+      "name": "登录页",
+      "mock": "index.php"
+    },
+    {
+      "url": "/Navigation",
+      "path": "/pages/Navigation/Navigation",
+      "name": "首页",
+      "mock": "index.php"
+    },
+    {
+      "url": "/User",
+      "path": "/pages/User/User",
+      "name": "首页",
+      "mock": "index.php"
+    },
+    {
+      "url": "/DeviceDetection",
+      "path": "/pages/DeviceDetection/DeviceDetection",
+      "name": "首页",
+      "mock": "index.php"
+    }
+  ]
+}

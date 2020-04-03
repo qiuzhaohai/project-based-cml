@@ -1,0 +1,102 @@
+@import '../../assets/theme/DefaultTheme.less';
+
+.login {
+
+    .login-header {
+        margin-bottom: 100cpx;
+
+        // 头部
+        .user-avatar {
+            // 头像
+            height: 200cpx;
+            width: 200cpx;
+            margin: 0 auto;
+            margin-top: 100cpx;
+            margin-bottom: 20cpx;
+        }
+
+        .user-name {
+
+            // 用户姓名
+            .user-name-text {
+                text-align: center;
+            }
+        }
+    }
+
+    .login-container {
+        // 中部
+        margin: auto;
+
+        .user-account {
+            // 用户名
+            flex-direction: row;
+            width: 630cpx;
+
+            .account-text {
+                // 标题
+                margin: auto;
+                width: 150cpx;
+            }
+
+            .account-input {
+                // 输入框
+                width: 480cpx;
+            }
+        }
+
+        .line {
+            width: 150cpx;
+            height: 1cpx;
+            background-color: #E5E5E5;
+        }
+
+        .user-password {
+            // 用户密码
+            flex-direction: row;
+            width: 630cpx;
+            margin-bottom: 50cpx;
+
+            .password-text {
+                // 标题
+                margin: auto;
+                width: 150cpx;
+            }
+
+            .password-input {
+                // 输入框
+                width: 480cpx;
+            }
+        }
+
+        .login-button {
+            // 登录按钮
+            margin: auto;
+            width: 630cpx;
+            height: @mainButtonHeight;
+            background-color: @lightGreenColor;
+            border-radius: @borderRadiusNormal;
+            border: @borderWidthNormal solid @lightGreenColor;
+
+            .login-button-text {
+                // 登录标题
+                margin: auto;
+                color: white;
+                text-align: center;
+            }
+        }
+    }
+
+    .login-footer {
+
+        //尾部
+        .copy-right {
+            // Copyright
+            margin-top: 30cpx;
+            text-align: center;
+            font-size: @fontSizeSmall;
+            color: @contentColor;
+            text-decoration: none;
+        }
+    }
+}

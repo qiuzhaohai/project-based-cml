@@ -1,0 +1,105 @@
+<template>
+  <page class="user" title="用户信息">
+    <view class="user-header">
+      <image class="user-avatar" src="{{userAvatarImgSrc}}"></image>
+      <view class="user-name">
+        <text class="user-name-text">{{userName}}</text>
+      </view>
+    </view>
+    <view class="user-container" 
+      c-for="{{cellDatas}}" 
+      c-for-index="index" 
+      c-for-item="item" 
+      c-key="index">
+      <q-cell cell-data="{{item}}"></q-cell>
+    </view>
+    <view class="user-footer">
+      <view class="logout-button" c-bind:click="logoutOnClick"><text class="logout-button-text">注销</text></view>
+    </view>
+  </page>
+</template>
+
+<script>
+import cml from 'chameleon-api';
+
+class User   {
+
+  data = {
+    userAvatarImgSrc: require("../../assets/images/common/user_avatar.png?__inline"),
+    userName: 'QiuZHs',
+    cellDatas: [{
+        title: '工号',
+        content: 'Q9999'
+      },{
+        title: '名称',
+        content: '用户名/信息部/技术中心'
+      },{
+        title: '邮箱',
+        content: 'username@qiuzh.com'
+      },{
+        title: '微信ID',
+        content: 'openId'
+      }
+    ]
+  }
+
+  computed = {
+  }
+
+  watch  = {
+  }
+
+  methods = {
+    logoutOnClick() {
+      cml.redirectTo({
+        path: '/pages/Login/Login'
+      })
+    }
+  }
+
+  beforeCreate(query) {
+  }
+
+  created(query) {
+  }
+
+  beforeMount(query) {
+  }
+
+  onShow() {
+  }
+
+  mounted() {
+  }
+
+  onHide() {
+  }
+
+  beforeDestroy() {
+  }
+
+  destroyed() {
+  }
+}
+
+export default new User();
+</script>
+
+<style lang="less" scoped>
+@import './User.less';
+</style>
+
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {
+      "q-cell": "../../components/TableCell/TableCell"
+    }
+  },
+  "wx": {
+    "navigationBarTitleText": "index",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+  }
+}
+</script>

@@ -1,0 +1,63 @@
+<template>
+  <input class="input" 
+    type="{{inputOptions.type}}" 
+    cstyle="{{inputOptions.cstyle}}" 
+    maxlength="{{inputOptions.maxlength}}"
+    placeholder="{{placeholder}}"
+    c-bind:input="input"
+    c-bind:confirm="confirm"
+    c-bind:focus="focus"
+    c-bind:blur="blur">
+  </input>
+</template>
+
+<script>
+
+class Input {
+
+  props = {
+    inputOptions: {
+      type: Object,
+      default: {}
+    }
+  }
+
+  data = {
+    placeholder: ''
+  }
+
+  methods = {
+    input (e) {
+      this.$cmlEmit('input', e.detail);
+    },
+    focus (e) {
+      this.placeholder = '';
+      this.$cmlEmit('focus', e.detail);
+    },
+    blur (e) {
+      this.placeholder = this.inputOptions.placeholder;
+      this.$cmlEmit('blur', e.detail);
+    },
+    confirm (e) {
+      this.$cmlEmit('confirm', e.detail);
+    }
+  }
+
+  created() {
+    this.placeholder = this.inputOptions.placeholder;
+  }
+
+}
+
+export default new Input();
+</script>
+<style>
+
+</style>
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {}
+  }
+}
+</script>

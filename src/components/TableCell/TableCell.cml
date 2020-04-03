@@ -1,0 +1,62 @@
+<template>
+  <view class="tablecell">
+    <view class="cell-title"><text class="cell-title-text" c-text="{{cellData.title}}"></text></view>
+    <view class="cell-content"><text class="cell-content-text" c-text="{{cellData.content}}"></text></view>
+  </view>
+  
+</template>
+
+<script>
+
+class TableCell {
+
+  props = {
+    cellData: {
+      type: Object,
+      default: {}
+    }
+  }
+
+  data = {
+  }
+
+  computed = {
+  }
+
+  watch  = {
+  }
+
+  methods = {
+  }
+
+  beforeCreate() {
+  }
+
+  created() {
+  }
+
+  beforeMount() {
+  }
+
+  mounted() {
+  }
+
+  beforeDestroy() {
+  }
+
+  destroyed() {
+  }
+}
+
+export default new TableCell();
+</script>
+<style lang="less" scoped>
+@import "./TableCell.less";
+</style>
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {}
+  }
+}
+</script>

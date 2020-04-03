@@ -1,0 +1,68 @@
+<template>
+  <view class="main"></view>
+</template>
+
+<script>
+import cml from "chameleon-api";
+
+class Main   {
+
+  data = {
+  }
+
+  computed = {
+  }
+
+  watch  = {
+  }
+
+  methods = {
+  }
+
+  beforeCreate(query) {
+  }
+
+  created(query) {
+    cml.redirectTo({
+      path: '/pages/Login/Login'
+    })
+  }
+
+  beforeMount(query) {
+  }
+
+  onShow() {
+  }
+
+  mounted() {
+  }
+
+  onHide() {
+  }
+
+  beforeDestroy() {
+  }
+
+  destroyed() {
+  }
+}
+
+export default new Main();
+</script>
+
+<style>
+
+</style>
+
+<script cml-type="json">
+{
+  "base": {
+    "usingComponents": {}
+  },
+  "wx": {
+    "navigationBarTitleText": "index",
+    "backgroundTextStyle": "dark",
+    "backgroundColor": "#E2E2E2"
+  }
+}
+</script>

@@ -1,0 +1,43 @@
+@import '../../assets/theme/DefaultTheme.less';
+
+.user {
+    .user-header {
+        margin-bottom: 100cpx;
+        // 头部
+        .user-avatar {
+            // 头像
+            height: 200cpx;
+            width: 200cpx;
+            margin: 0 auto;
+            margin-top: 100cpx;
+            margin-bottom: 20cpx;
+        }
+
+        .user-name {
+
+            // 用户姓名
+            .user-name-text {
+                text-align: center;
+            }
+        }
+    }
+
+    .user-footer {
+        margin-top: 60cpx;
+        //尾部
+        .logout-button {
+            margin: auto;
+            width: 630cpx;
+            height: @mainButtonHeight;
+            background-color: @importRedColor;
+            border-radius: @borderRadiusNormal;
+            border: @borderWidthNormal solid @importRedColor;
+
+            .logout-button-text {
+                margin: auto;
+                color: white;
+                text-align: center;
+            }
+        }
+    }
+}
